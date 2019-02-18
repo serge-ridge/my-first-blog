@@ -25,7 +25,7 @@ SECRET_KEY = 'c7k7tj-k+l5fmg(5f!zlb))tkvc_&53vzr$cga(!dg52)8*di%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'serge7ridge.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'serge7ridge.pythonanywhere.com']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
 ]
+
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,8 +78,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangoblog',
+        'USER': 'djangouser',
+        'PASSWORD': '787878',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
